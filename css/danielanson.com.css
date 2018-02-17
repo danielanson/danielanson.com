@@ -1,0 +1,58 @@
+body {
+    background-color: white;
+}
+
+img {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+a {
+	text-decoration: none;
+	color: red;
+}
+
+a.visited {
+	color: red;
+}
+
+a.active {
+	color: red;
+}
+
+#title {
+    font-size: 86px;
+    font-weight: bolder;
+    padding-top: 7cm;
+}
+
+#second {
+    font-size: 46px;
+    font-weight: bolder;
+	padding-bottom: 3cm;
+}
+
+#gmaillogo {
+	width: 91px;
+	height: 66px;
+}
+
+#imgbar {
+	padding-bottom: 3cm;
+}
+
+.courier {
+	color: black;
+	font-family: courier;
+}
+
+.wide {
+    width: 750px;
+    margin: auto;
+	text-align: center;
+}
+
+.sixty-six {
+	height: 66px;
+	width: 66px;
+}

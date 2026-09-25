@@ -3,4 +3,6 @@ DS_Store
 *.tfstate
 *.tfstate.*
 .terraform/
-.terraform.*
+*.tfplan
+crash.log
+crash.*.log

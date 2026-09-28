@@ -7,4 +7,3 @@ module "dns" {
 module "storage" {
   source = "./modules/storage"
 }
-

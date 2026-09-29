@@ -6,3 +6,4 @@ DS_Store
 *.tfplan
 crash.log
 crash.*.log
+imports.tf

@@ -1,0 +1,32 @@
+# Sample GitHub Actions workflow to deploy to AWS S3 and CloudFront
+name: Deploy Static Website
+
+on:
+  push:
+    branches:
+      - main # Change this to your default branch if different
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1 # Change to your S3 bucket's region
+
+      - name: Deploy to S3
+        run: |
+          # Replace 'YOUR_S3_BUCKET_NAME' with your actual bucket. 
+          # Change '.' to your build output folder (e.g., 'dist' or 'build') if using a framework.
+          aws s3 sync . s3://YOUR_S3_BUCKET_NAME --delete
+
+      - name: Invalidate CloudFront Cache
+        run: |
+          # Replace 'YOUR_CLOUDFRONT_DISTRIBUTION_ID' with your actual distribution ID.
+          aws cloudfront create-invalidation --distribution-id YOUR_CLOUDFRONT_DISTRIBUTION_ID --paths "/*"

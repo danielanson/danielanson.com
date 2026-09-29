@@ -4,6 +4,6 @@ module "dns" {
   base_website_name = "danielanson.com"
 }
 
-module "storage" {
-  source = "./modules/storage"
+module "website" {
+  source = "./modules/website"
 }
